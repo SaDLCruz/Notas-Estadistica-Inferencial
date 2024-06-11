@@ -1,0 +1,7 @@
+conceptos-iniciales
+qué-es-una-hipótesis-estadística
+errores-de-inferencia
+región-crítica-y-reglas-de-decisión
+método-del-intervalo-de-confianza
+método-de-la-prueba-de-significancia
+pasos-prueba-de-hipótesis-estadísticas

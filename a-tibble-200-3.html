@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 A tibble: 200 × 3 | Pruebas de hipótesis de una muestra</title>
+  <meta name="description" content="4 A tibble: 200 × 3 | Pruebas de hipótesis de una muestra" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 A tibble: 200 × 3 | Pruebas de hipótesis de una muestra" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 A tibble: 200 × 3 | Pruebas de hipótesis de una muestra" />
+  
+  
+  
+
+<meta name="author" content="Sadan De la Cruz Almanza" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="a-tibble-4600-6.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Home</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="qué-es-una-hipótesis-estadística.html"><a href="qué-es-una-hipótesis-estadística.html"><i class="fa fa-check"></i><b>1</b> ¿Qué es una hipótesis estadística?</a></li>
+<li class="chapter" data-level="2" data-path="a-tibble-6-5.html"><a href="a-tibble-6-5.html"><i class="fa fa-check"></i><b>2</b> A tibble: 6 × 5</a></li>
+<li class="chapter" data-level="3" data-path="a-tibble-4600-6.html"><a href="a-tibble-4600-6.html"><i class="fa fa-check"></i><b>3</b> A tibble: 4,600 × 6</a></li>
+<li class="chapter" data-level="4" data-path="a-tibble-200-3.html"><a href="a-tibble-200-3.html"><i class="fa fa-check"></i><b>4</b> A tibble: 200 × 3</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="a-tibble-200-3.html"><a href="a-tibble-200-3.html#errores-de-inferencia"><i class="fa fa-check"></i><b>4.1</b> Errores de inferencia</a></li>
+<li class="chapter" data-level="4.2" data-path="a-tibble-200-3.html"><a href="a-tibble-200-3.html#región-crítica-y-reglas-de-decisión"><i class="fa fa-check"></i><b>4.2</b> Región crítica y reglas de decisión</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pruebas de hipótesis de una muestra</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="a-tibble-200-3" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> A tibble: 200 × 3<a href="a-tibble-200-3.html#a-tibble-200-3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>country date consignment_mean
+<fct> <chr> <dbl>
+1 Chile 2014Q1 1.34
+2 Chile 2014Q2 1.47
+3 Chile 2014Q3 1.53
+4 Chile 2014Q4 1.75
+5 Chile 2015Q1 1.58
+6 Chile 2015Q2 1.70
+7 Chile 2015Q3 1.84
+8 Chile 2015Q4 2.10
+9 Chile 2016Q1 1.86
+10 Chile 2016Q2 2.19
+# ℹ 190 more rows</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="a-tibble-200-3.html#cb9-1" tabindex="-1"></a>bd1 <span class="ot">&lt;-</span> bd1 <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="a-tibble-200-3.html#cb9-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">factor</span>(date, <span class="at">levels =</span> <span class="fu">unique</span>(date)))</span>
+<span id="cb9-3"><a href="a-tibble-200-3.html#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="a-tibble-200-3.html#cb9-4" tabindex="-1"></a><span class="fu">ggplot</span>(bd1, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> consignment_mean, <span class="at">color =</span> country, <span class="at">group =</span> country)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="a-tibble-200-3.html#cb9-5" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="Notas-Estad%C3%ADstica-II_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="a-tibble-200-3.html#cb10-1" tabindex="-1"></a><span class="co"># GRÁFICA DE DENSIDAD POR GRUPOS</span></span>
+<span id="cb10-2"><a href="a-tibble-200-3.html#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="a-tibble-200-3.html#cb10-3" tabindex="-1"></a>means_by_country <span class="ot">&lt;-</span> bd1 <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="a-tibble-200-3.html#cb10-4" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="a-tibble-200-3.html#cb10-5" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_consignment =</span> <span class="fu">mean</span>(consignment_mean))</span>
+<span id="cb10-6"><a href="a-tibble-200-3.html#cb10-6" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="a-tibble-200-3.html#cb10-7" tabindex="-1"></a><span class="fu">ggplot</span>(bd1, <span class="fu">aes</span>(<span class="at">x =</span> consignment_mean)) <span class="sc">+</span> <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb10-8"><a href="a-tibble-200-3.html#cb10-8" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">data =</span> means_by_country, <span class="fu">aes</span>(<span class="at">xintercept =</span> mean_consignment),</span>
+<span id="cb10-9"><a href="a-tibble-200-3.html#cb10-9" tabindex="-1"></a>             <span class="at">color=</span><span class="st">&quot;blue&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="a-tibble-200-3.html#cb10-10" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> country, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
+<p><img src="Notas-Estad%C3%ADstica-II_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div id="errores-de-inferencia" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Errores de inferencia<a href="a-tibble-200-3.html#errores-de-inferencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En estadística inferencial saber “aceptar” o “rechazar” la hipótesis propuesta es importante respecto al “que decir” de los datos.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Error tipo I:</strong> El rechazo de <span class="math inline">\(H_0\)</span> cuando en realidad <span class="math inline">\(H_0\)</span> es cierto. Esto es posible cuando la decisión es rechazar la hipótesis nula.</p></li>
+<li><p><strong>Error tipo II:</strong> Equivocarse al rechazar <span class="math inline">\(H_0\)</span> cuando en realidad <span class="math inline">\(H_0\)</span> es falsa. Esto es posible cuando la decisión es no rechazar la hipótesis nula.</p></li>
+</ol>
+<p>Como se menciono en clases anteriores, la idea de la estadística es encontrar el estado “natural” de nuestros fenomenos económicos (población) a partir de una muestra. En este caso, la siguiente tabla proporciona un resumen respecto a la decisión tomada:</p>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="36%" />
+<col width="36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Población (“Verdad”)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Muestra</strong></td>
+<td><span class="math inline">\(H_0\)</span> es verdadero</td>
+<td><span class="math inline">\(H_0\)</span> es falsa</td>
+</tr>
+<tr class="even">
+<td>No rechazar<span class="math inline">\(H_0\)</span></td>
+<td><strong>Decisión correcta</strong> (Pr = 1 - <span class="math inline">\(\alpha\)</span> )</td>
+<td>Error tipo II (Pr = <span class="math inline">\(\alpha\)</span>)</td>
+</tr>
+<tr class="odd">
+<td>Rechazar <span class="math inline">\(H_0\)</span></td>
+<td>Error tipo I (Pr = <span class="math inline">\(\beta\)</span>)</td>
+<td><strong>Decisión correcta</strong> (Pr = 1 - <span class="math inline">\(\beta\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>En todo caso, <span class="math inline">\(0 \leq \alpha \leq 1\)</span> y <span class="math inline">\(0 \leq \beta \leq 1\)</span>. <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> permiten medir la posibilidad de cometer alguno de estos errores. ()</p>
+<p><strong>Nota:</strong> De acuerdo con Canavos, “la decisión de rechazar <span class="math inline">\(H_0\)</span> no necesariamente significa que <span class="math inline">\(H_0\)</span> sea falsa”, no obstante, la muestra utilizada para tomar la decisión proporciona un grado de confiabilidad con el que puede procederse como si <span class="math inline">\(H_0\)</span> fuese falsa.</p>
+</div>
+<div id="región-crítica-y-reglas-de-decisión" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Región crítica y reglas de decisión<a href="a-tibble-200-3.html#región-crítica-y-reglas-de-decisión" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para ciertos valores de la estadística de prueba, la decisión será el rechazar la hipótesis nula, dichos valores se conocen como región crítica. Las reglas de decisión se relacionan con los postulados de <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span>. En este caso es importante mencionar que en muchas situaciones el error tipo I se considera como un error mucho más grave que el error tipo II, aceptar la premisa del error tipo I es mucho más serio que el error tipo II.</p>
+<p><img src="images/Captura%20de%20Pantalla%202024-06-04%20a%20la(s)%205.13.11%20a.m..png" /></p>
+<p>Un principio sencillo y razonable al obtener reglas de decisión para la prueba de hipótesis estadística es seleccionar aquel procedimiento de prueba que tenga el tamaño más pequeño para el error tipo II entre todos los procedimientos que tengan el mismo tamaño para el error tipo I. El valor de <span class="math inline">\(\alpha\)</span> no puede hacerse muy pequeño sin que se incremente el valor de <span class="math inline">\(\beta\)</span>.</p>
+<p><img src="images/Captura%20de%20Pantalla%202024-06-04%20a%20la(s)%205.24.30%20a.m..png" /></p>
+<p>La probabilidad de <span class="math inline">\(\alpha\)</span> del error tipo I también se conoce como el <strong>nivel de significancia estadística</strong></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="a-tibble-4600-6.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
